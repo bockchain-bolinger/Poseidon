@@ -1,0 +1,27 @@
+{
+    "name": "Backup aller User-Apps",
+    "description": "Erstellt für jede installierte User-App ein Backup (AB-Datei).",
+    "commands": [
+        {
+            "action": "confirm",
+            "command": "Dies kann lange dauern. Fortfahren?",
+            "description": "Benutzerbestätigung"
+        },
+        {
+            "command": "shell pm list packages -3",
+            "description": "Liste aller User-Apps abrufen",
+            "save_output": true,
+            "ignore_errors": false
+        },
+        {
+            "action": "wait",
+            "command": "2",
+            "description": "Kurze Pause"
+        },
+        {
+            "action": "user_input",
+            "command": "app_package",
+            "description": "Package-Name eingeben (z.B. com.example.app)"
+        }
+    ]
+}

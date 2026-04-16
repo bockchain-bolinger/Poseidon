@@ -1,0 +1,25 @@
+{
+    "name": "Netzwerkdiagnose",
+    "description": "Führt Ping, DNS-Abfrage und Routenprüfung auf dem Gerät aus.",
+    "commands": [
+        {
+            "action": "user_input",
+            "command": "target_host",
+            "description": "Ziel-Host (z.B. google.com)"
+        },
+        {
+            "command": "shell ping -c 4 {target_host}",
+            "description": "Ping ausführen",
+            "save_output": true
+        },
+        {
+            "command": "shell nslookup {target_host}",
+            "description": "DNS-Abfrage",
+            "ignore_errors": true
+        },
+        {
+            "command": "shell ip route show",
+            "description": "Routing-Tabelle anzeigen"
+        }
+    ]
+}

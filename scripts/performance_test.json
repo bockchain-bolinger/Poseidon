@@ -1,0 +1,25 @@
+{
+    "name": "Performance-Test",
+    "description": "Misst CPU-Auslastung, RAM und schreibt Testdatei.",
+    "commands": [
+        {
+            "command": "shell top -n 1 -b",
+            "description": "CPU-Auslastung",
+            "save_output": true
+        },
+        {
+            "command": "shell dumpsys meminfo",
+            "description": "RAM-Info",
+            "save_output": true
+        },
+        {
+            "command": "shell dd if=/dev/zero of=/sdcard/testfile bs=1M count=100",
+            "description": "Schreibtest (100 MB)",
+            "ignore_errors": true
+        },
+        {
+            "command": "shell rm /sdcard/testfile",
+            "description": "Testdatei löschen"
+        }
+    ]
+}

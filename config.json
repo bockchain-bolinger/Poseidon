@@ -1,0 +1,7 @@
+{
+    "backup_path": "./backups",
+    "screenshot_path": "./screenshots",
+    "record_duration": 30,
+    "scrcpy_path": "",
+    "last_ip": ""
+}

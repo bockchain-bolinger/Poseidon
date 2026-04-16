@@ -1,0 +1,28 @@
+# ============================================================
+# Poseidon - ADB Power Tool
+# Optimierte Abhängigkeiten
+# ============================================================
+
+# QR-Code-Generierung für WLAN-ADB
+qrcode[pil] >= 7.4
+
+# HTTP-Anfragen für echte Update-Checks via GitHub API
+requests >= 2.28.0
+
+# Bessere Farbunterstützung unter Windows
+colorama >= 0.4.6
+
+# Fortschrittsanzeigen für langwierige Operationen
+tqdm >= 4.65.0
+
+# Schönes TUI (Terminal User Interface)
+rich >= 12.0.0
+
+# MITM/Proxy Analysis support
+mitmproxy >= 10.0.0
+
+# Tabellendarstellung (optional, aber nützlich für App-Listen)
+tabulate >= 0.9.0
+
+# Optionale Pakete für fortgeschrittene Netzwerk-Features
+# python-nmap >= 0.6.1

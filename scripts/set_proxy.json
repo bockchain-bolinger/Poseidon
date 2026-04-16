@@ -1,0 +1,26 @@
+{
+    "name": "HTTP-Proxy setzen",
+    "description": "Aktiviert oder deaktiviert einen Proxy für WLAN.",
+    "commands": [
+        {
+            "action": "user_input",
+            "command": "proxy_host",
+            "description": "Proxy-Host (leer = deaktivieren)"
+        },
+        {
+            "action": "user_input",
+            "command": "proxy_port",
+            "description": "Proxy-Port"
+        },
+        {
+            "command": "shell settings put global http_proxy {proxy_host}:{proxy_port}",
+            "description": "Proxy setzen",
+            "ignore_errors": true
+        },
+        {
+            "command": "shell settings put global http_proxy :0",
+            "description": "Proxy deaktivieren (wird nur ausgeführt, wenn Host leer)",
+            "condition": "{proxy_host} == ''"
+        }
+    ]
+}

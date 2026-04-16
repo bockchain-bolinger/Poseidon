@@ -1,0 +1,37 @@
+{
+    "name": "Geräte-Cleanup",
+    "description": "Leert App-Caches, löscht temporäre Dateien und startet SystemUI neu.",
+    "commands": [
+        {
+            "action": "confirm",
+            "command": "Cache aller Apps leeren? Dies kann einige Minuten dauern.",
+            "description": "Bestätigung"
+        },
+        {
+            "command": "shell pm list packages -3",
+            "description": "Apps auflisten (Cache-Leeren für jede einzeln wäre aufwändig – hier als Platzhalter)"
+        },
+        {
+            "action": "wait",
+            "command": "1"
+        },
+        {
+            "command": "shell rm -rf /sdcard/Android/data/*/cache",
+            "description": "Löscht Cache-Verzeichnisse der Apps (falls vorhanden)",
+            "ignore_errors": true
+        },
+        {
+            "command": "shell rm -rf /sdcard/DCIM/.thumbnails",
+            "description": "Löscht Thumbnail-Cache",
+            "ignore_errors": true
+        },
+        {
+            "command": "shell pkill -f com.android.systemui",
+            "description": "SystemUI neustarten"
+        },
+        {
+            "action": "wait",
+            "command": "3"
+        }
+    ]
+}
